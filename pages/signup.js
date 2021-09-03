@@ -4,8 +4,11 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { signup } from "../firebase/emailpassword";
 import { signInWithGoogle } from "../firebase/google";
+import { useRouter } from "next/router";
 
 export default function SignupPage() {
+  const router = useRouter()
+
   const validate = Yup.object({
     fullName: Yup.string()
       .max(25, "Must be 25 characters or less")
@@ -70,7 +73,7 @@ export default function SignupPage() {
           </div>
           <p className="py-3 text-dark">
             Dont have an account?{" "}
-            <a href="#" className="underline font-semibold">
+            <a href="#" className="underline font-semibold" onClick={() => router.push("/login")} >
               Login
             </a>
           </p>
@@ -82,6 +85,6 @@ export default function SignupPage() {
           </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../assets/logo.svg";
 import {
@@ -6,8 +6,12 @@ import {
   UserIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/outline";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
+  const [productsInCart, setProductsInCart] = useState(0);
+
   return (
     <>
       <section className="shadow-xl z-50">
@@ -16,7 +20,11 @@ export default function Navbar() {
           <div className="flex justify-center sm:justify-between">
             {/* Left  */}
             <div className="hidden sm:flex relative w-32 h-10">
-              <Image src={Logo} layout="fill" />
+              <Image
+                src={Logo}
+                layout="fill"
+                onClick={() => router.push("/")}
+              />
             </div>
 
             {/* Middle */}
@@ -37,11 +45,21 @@ export default function Navbar() {
             {/* Right */}
             <div>
               <div className="hidden sm:flex space-x-5">
-                <div className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer">
+                <div
+                  className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer"
+                  onClick={() => router.push("/login")}
+                >
                   <UserIcon className="w-6" />
                 </div>
                 <div className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer">
-                  <ShoppingBagIcon className="w-6" />
+                  <div className="relative">
+                    <ShoppingBagIcon className="w-6" />
+                    {productsInCart > 0 ? (
+                      <div className="absolute -top-5 -right-4 bg-primary rounded-full px-2 text-white">
+                        {productsInCart}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </div>

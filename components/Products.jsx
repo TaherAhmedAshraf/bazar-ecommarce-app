@@ -11,7 +11,7 @@ export default function Products() {
       {products.map((product) => (
         <div
           key={product.id}
-          className="w-[270px] h-[400px] relative p-3 bg-white my-2 rounded-md hover:shadow-lg transition-all duration-300"
+          className="w-[270px] h-[400px] relative p-3 bg-white my-2 rounded-md hover:shadow-lg transition-all duration-300 cursor-pointer"
         >
           <div className="h-[70%] flex justify-center item-center">
             <img className="h-full" src={product.image} alt={product.title} />
@@ -25,7 +25,7 @@ export default function Products() {
               <p className="text-primary font-medium text-sm">
                 ${product.price}
               </p>
-              <button className="border border-primary text-primary p-1 rounded-md hover:shadow">
+              <button className="border border-primary text-primary p-1 rounded-sm hover:shadow">
                 <AiOutlinePlus />
               </button>
             </div>

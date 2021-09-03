@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.4",
     "firebase": "8.0.0",
     "firebase-react-hooks": "^0.8.0",
