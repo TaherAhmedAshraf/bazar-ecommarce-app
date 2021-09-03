@@ -37,10 +37,10 @@ export default function Navbar() {
             {/* Right */}
             <div>
               <div className="hidden sm:flex space-x-5">
-                <div className="bg-gray-100 p-3 rounded-full text-gray-500">
+                <div className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer">
                   <UserIcon className="w-6" />
                 </div>
-                <div className="bg-gray-100 p-3 rounded-full text-gray-500">
+                <div className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer">
                   <ShoppingBagIcon className="w-6" />
                 </div>
               </div>

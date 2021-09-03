@@ -3,7 +3,7 @@ import React from "react";
 export default function Layout({ children }) {
   return (
     <>
-      <section className="bg-gray-100 h-[200vh]">
+      <section className="bg-gray-100">
         <div className="container h-[100%] mx-auto flex z-0">
           {/* Sidebar */}
           <div className="hidden lg:inline-flex sticky top-0 bg-white w-[280px] h-[100vh] px-5 py-10 mr-10 rounded-b-md">

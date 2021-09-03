@@ -9,7 +9,8 @@ module.exports = {
       ...colors,
       primary: "#E3364E",
       secondary: "#0F3460",
-      dark: "#2b3445"
+      dark: "#2b3445",
+      darkBlue: "#141850"
     },
     container: {
       padding: {
