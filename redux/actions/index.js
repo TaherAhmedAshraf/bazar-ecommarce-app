@@ -11,3 +11,10 @@ export const SET_PRODUCTS = (products) => {
         payload: products,
     }
 }
+
+export const ADD_TO_CART = (item) => {
+    return {
+        type: "ADD_TO_CART",
+        payload: item
+    }
+}

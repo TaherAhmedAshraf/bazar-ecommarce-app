@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Logo from "../assets/logo.svg";
 import {
@@ -7,14 +7,21 @@ import {
   ShoppingBagIcon,
 } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const router = useRouter();
-  const [productsInCart, setProductsInCart] = useState(0);
+  const cartItems = useSelector((state) => state.cartReducer);
+  console.log(cartItems.length);
+  const [productsInCart, setProductsInCart] = useState(cartItems.length);
+
+  useEffect(() => {
+    setProductsInCart(cartItems.length);
+  }, [cartItems]);
 
   return (
     <>
-      <section className="shadow-xl z-50">
+      <section className="shadow-xl z-50 sticky top-0 bg-white">
         <div className="container mx-auto py-6">
           {/* Top */}
           <div className="flex justify-center sm:justify-between">

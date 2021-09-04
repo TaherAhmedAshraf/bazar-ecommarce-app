@@ -2,12 +2,15 @@ import React from "react";
 import { PlusIcon } from "@heroicons/react/solid";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { ADD_TO_CART } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 export default function Products() {
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.productsReducer);
   console.log(products);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3">
+    <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
       {products.map((product) => (
         <div
           key={product.id}
@@ -25,7 +28,13 @@ export default function Products() {
               <p className="text-primary font-medium text-sm">
                 ${product.price}
               </p>
-              <button className="border border-primary text-primary p-1 rounded-sm hover:shadow">
+              <button
+                className="border border-primary text-primary p-1 rounded-sm hover:shadow"
+                onClick={() => {
+                  console.log(product);
+                  dispatch(ADD_TO_CART({ _id: product._id, qty: 1 }));
+                }}
+              >
                 <AiOutlinePlus />
               </button>
             </div>
