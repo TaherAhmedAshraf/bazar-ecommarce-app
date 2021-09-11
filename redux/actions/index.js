@@ -18,3 +18,17 @@ export const ADD_TO_CART = (item) => {
         payload: item
     }
 }
+
+export const INCREMENT = (id) => {
+    return {
+        type: "INCREMENT",
+        payload: id
+    }
+}
+
+export const DECREMENT = (id) => {
+    return {
+        type: "DECREMENT",
+        payload: id
+    }
+}

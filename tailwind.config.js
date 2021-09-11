@@ -10,7 +10,8 @@ module.exports = {
       primary: "#E3364E",
       secondary: "#0F3460",
       dark: "#2b3445",
-      darkBlue: "#141850"
+      darkBlue: "#141850",
+      transRed: '#FCE9EC'
     },
     container: {
       padding: {
@@ -21,10 +22,10 @@ module.exports = {
         '2xl': '6rem',
       },
     },
-    extend: { },
+    extend: {},
   },
   variants: {
-    extend: { },
+    extend: {},
   },
   plugins: [],
 }

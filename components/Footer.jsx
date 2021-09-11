@@ -10,9 +10,9 @@ import {
   FaGoogle,
 } from "react-icons/fa";
 
-export default function Footer() {
+export default function Footer({ rounded }) {
   return (
-    <div className="bg-darkBlue p-10 rounded-xl mb-10">
+    <div className={`bg-darkBlue p-10  ${rounded ? "rounded-xl mb-10" : null}`}>
       <div className="hidden sm:flex relative w-32 h-10">
         <Image src={Logo} layout="fill" />
       </div>

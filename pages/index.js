@@ -23,7 +23,7 @@ export default function Home({ products }) {
       dispatch(SET_USER(user));
     }
   });
-  
+
   const state = useSelector((state) => state.userReducer)
   console.log(state)
   return (
@@ -36,7 +36,7 @@ export default function Home({ products }) {
         <Catagory />
         <Products />
         <OfferBord />
-        <Footer />
+        <Footer rounded={true} />
       </Layout>
     </>
   )

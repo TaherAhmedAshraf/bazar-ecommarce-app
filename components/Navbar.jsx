@@ -59,7 +59,10 @@ export default function Navbar() {
                   <UserIcon className="w-6" />
                 </div>
                 <div className="bg-gray-100 p-3 rounded-full text-gray-500 cursor-pointer">
-                  <div className="relative">
+                  <div
+                    className="relative"
+                    onClick={() => router.push("/cart")}
+                  >
                     <ShoppingBagIcon className="w-6" />
                     {productsInCart > 0 ? (
                       <div className="absolute -top-5 -right-4 bg-primary rounded-full px-2 text-white">
